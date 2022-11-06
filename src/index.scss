@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// mixin folder 
+@import './mixin/mixin.scss';
+// variable folder 
+@import './variables/variables.scss';
+
+.App {
+  @include linearGradient();
+  height: 100vh;
+  @include display();
+}
+
+.app_container {
+  position: $postion;
+  background-color: transparent;
+  border: 1px solid black;
+  height: 70vh;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: auto;
+}
+
+.header {
+  color: $color;
+  position: $postion;
+  text-align: center;
+  bottom: 50px;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  padding: 8px;
+  color: $color;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 2px;
+}
+
+input[type="text"]:focus {
+  background-color: transparent;
+
+}
+
+button {
+  padding: 8px;
+  background-color: transparent;
+  color: $color;
+  cursor: pointer;
+}
+
+.info_key {
+  color: $color;
+  font-size: 20px;
+  text-align: center;
+}
+
+.icons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+#icons {
+  text-align: center;
+  padding: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@each $name ,
+$color in $icons {
+  .#{$name} {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    position: $postion;
+    text-align: center;
+    bottom: 90px;
+  }
+
+  input[type="text"] {
+    position: $postion;
+    bottom: 81px;
+    margin: 2px;
+    left: 40px;
+  }
+
+  button {
+    margin: 2px;
+    position: $postion;
+    bottom: 80px;
+    left: 40px;
+  }
+
+  .app_container {
+    border: none;
+    position: $postion;
+  }
+
+  .info_value {
+    position: $postion;
+    bottom: 80px;
+  }
+  .icons {
+    bottom: -30px;
+  }
+}
